@@ -1,0 +1,48 @@
+.music-sec {
+  flex: 0 0 80%;
+  width: 100%;
+  height: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.music-cont {
+  flex: 0 0 90px;
+  width: 98%;
+  margin: 5px 0px;
+  border-radius: 10pxs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.music-cont > section {
+  flex: 0 0 10%;
+  height: 90%;
+  background-color: white;
+}
+
+.music-cont > div {
+  flex: 0 0 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.music-cont-det > p {
+  font-size: 14px;
+  color: #404040;
+  padding: 0px 10px;
+}
+
+.music-cont-det > span {
+  font-size: 13px;
+  color: grey;
+  padding: 0px 10px;
+}

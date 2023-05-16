@@ -1,0 +1,91 @@
+.action-sec {
+  flex: 0 0 20%;
+  height: 100vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid gainsboro;
+}
+
+.action-sec > ul {
+  flex: 0 0 60%;
+  width: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+.action-sec > ul > li {
+  width: 60%;
+  height: 60px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-sec > button {
+  width: 40%;
+  background-color: coral;
+  color: white;
+}
+
+.third-sec {
+  flex: 0 0 20%;
+  height: 100%;
+  background-color: whitesmoke;
+  border-left: 1px solid gainsboro;
+}
+
+.upload-sec {
+  width: 40%;
+  height: 50vh;
+  background-color: blanchedalmond;
+  position: fixed;
+  bottom: 30%;
+  border-radius: 10px;
+  z-index: 3;
+}
+
+.upload-sec > section {
+  flex: 0 0 30%;
+  width: 100%;
+  background-color: coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-sec > section > input {
+  display: none;
+}
+
+.upload-sec > div {
+  flex: 0 0 30%;
+  width: 100%;
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-sec > span {
+  margin: 20px 0px;
+}
+
+@media (max-width: 600px) {
+  .action-sec {
+    display: none;
+  }
+  .third-sec {
+    display: none;
+  }
+}
