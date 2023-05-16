@@ -4,6 +4,7 @@ import ActionSec from "./ActionSec";
 import ThirdSec from "./ThirdSec";
 import UploadSec from "./UploadSec";
 import MusicPlayer from "./MusicPlayer";
+import BottomNav from "./BottomNav";
 
 const HomeHeader = () => {
   return (
@@ -33,7 +34,7 @@ const Home = () => {
         <MusicSec />
       </div>
       <ThirdSec />
-    
+      <BottomNav />
     </div>
   );
 };

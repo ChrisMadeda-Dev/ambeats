@@ -8,7 +8,6 @@ const MusicCont = ({ song, setSong }) => {
         <p>{song.name}</p>
         <span>{song.size}</span>
       </div>
-      <div></div>
     </div>
   );
 };

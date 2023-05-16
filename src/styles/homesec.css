@@ -88,4 +88,8 @@
   .third-sec {
     display: none;
   }
+
+  .upload-sec {
+    width: 95%;
+  }
 }
