@@ -51,7 +51,9 @@
 }
 
 @media (max-width: 600px) {
-
+.home-header{
+  background: white;
+}
   .home-center {
     width: 100%;
     flex: 0 0 100%;
