@@ -61,6 +61,7 @@
   .home-bar-sec {
     width: 100%;
     flex: 0 0 20%;
+    background: linear-gradient(white,aliceblue);
   }
   .home-bar-sec > .home-bar-block {
     flex: 0 0 27%;
