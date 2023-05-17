@@ -8,7 +8,7 @@ const MusicCont = ({ song, setSong }) => {
         <BiPlayCircle style={{fontSize:'20px'}} />
       </section>
       <div className="music-cont-det">
-        <p>{song.name}</p>
+        <section>{song.name}</section>
         <span>{song.size}</span>
       </div>
     </div>

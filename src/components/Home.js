@@ -15,7 +15,7 @@ import { getFirestore, getDoc, doc } from "firebase/firestore";
 const HomeHeader = () => {
   return (
     <header className="home-header">
-      <h1>Am beats </h1>
+      <h1>AmBeats </h1>
     </header>
   );
 };
