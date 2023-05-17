@@ -17,17 +17,18 @@ import {
 import { useState } from "react";
 
 const UploadSec = ({ toggleUpldSec }) => {
+  const userId = parseFloat(localStorage.getItem("user-phone"));
   const [uploadProgress, setUploadProgress] = useState("");
 
   //Firestore
   const db = getFirestore(app);
   //storage
   const storage = getStorage(app);
-  const userRef = ref(storage, `users/${1111}/songs`);
+  const userRef = ref(storage, `users/${userId}/songs`);
 
   function uploadFile(file) {
     if (file && file.type === "audio/mpeg") {
-      const dbSongRef = doc(db, `users/${1111}/songs/${file.name}`);
+      const dbSongRef = doc(db, `users/${userId}/songs/${file.name}`);
       const songRef = ref(userRef, `${file.name}`);
       const uploadTask = uploadBytesResumable(songRef, file);
 
@@ -63,7 +64,7 @@ const UploadSec = ({ toggleUpldSec }) => {
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
             const song = {
-              userId: 1111,
+              userId: userId,
               name: file.name,
               size: file.size,
               src: url,

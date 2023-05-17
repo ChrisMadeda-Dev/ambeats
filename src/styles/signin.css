@@ -1,0 +1,59 @@
+.signin-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.signin-page > header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 7vh;
+  background-color: "";
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.signin-page > header > h3 {
+  margin-left: 20px;
+}
+
+.input-zone {
+  width: 60%;
+  height: 60vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-zone > input {
+  width: 70%;
+  height: 50px;
+}
+.input-zone > button {
+  height: 50px;
+  width: 50%;
+  margin-top: 20px;
+  background: linear-gradient(seagreen, teal);
+  border: 2px solid seagreen;
+  color: white;
+  font-size: 15px;
+}
+
+.input-zone > span {
+  font-size: 13px;
+  color: teal;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+  .input-zone {
+    width: 90%;
+  }
+}
