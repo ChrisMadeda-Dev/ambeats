@@ -1,6 +1,6 @@
 .music-player {
   width: 50%;
-  height: 5vh;
+  height: 7vh;
   position: fixed;
   bottom: 0vh;
   background-color: whitesmoke;
@@ -11,7 +11,7 @@
 
 @media (max-width: 600px) {
   .music-player {
-    height: 10vh;
+    height: 7vh;
     width: 100%;
     bottom: 6vh;
   }

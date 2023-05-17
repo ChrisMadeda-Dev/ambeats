@@ -10,9 +10,9 @@
 }
 
 .music-cont {
-  flex: 0 0 90px;
+  flex: 0 0 80px;
   width: 98%;
-  margin: 5px 0px;
+  margin: 3px 0px;
   border-radius: 10pxs;
   display: flex;
   align-items: center;
@@ -20,10 +20,17 @@
   background-color: whitesmoke;
 }
 
+.music-cont:nth-child(1){
+  margin-top: 10px;
+}
+
 .music-cont > section {
   flex: 0 0 10%;
   height: 90%;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .music-cont-det {
@@ -38,13 +45,17 @@
 .music-cont-det > p {
   font-size: 14px;
   color: #404040;
-  padding: 0px 10px;
+  padding: 0px 20px;
+  background-color: "";
+  height: 17px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .music-cont-det > span {
   font-size: 13px;
   color: grey;
-  padding: 0px 10px;
+  padding: 0px 20px;
 }
 
 @media (max-width: 600px) {
@@ -54,6 +65,6 @@
   .music-cont-det {
     flex: 0 0 80%;
     height: 50px;
-    background-color: '';
+    background-color: "";
   }
 }

@@ -6,34 +6,63 @@ import UploadSec from "./UploadSec";
 import MusicPlayer from "./MusicPlayer";
 import BottomNav from "./BottomNav";
 
+import { BiHeart, BiHeadphone, BiHeading } from "react-icons/bi";
+import { useEffect, useState } from "react";
+
+import app from "./Firebase";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
+
 const HomeHeader = () => {
   return (
     <header className="home-header">
-      <h1>am beats 20</h1>
+      <h1>Am beats </h1>
     </header>
   );
 };
 
 const HomeBarSec = () => {
+  const iconStyle = { fontSize: "25px" };
   return (
     <div className="home-bar-sec">
-      <div className="home-bar-block"></div>
-      <div className="home-bar-block"></div>
-      <div className="home-bar-block"></div>
+      <div className="home-bar-block">
+        <BiHeart style={iconStyle} />
+      </div>
+      <div className="home-bar-block">
+        <BiHeadphone style={iconStyle} />
+      </div>
+      <div className="home-bar-block">
+        <BiHeading style={iconStyle} />
+      </div>
     </div>
   );
 };
 
 const Home = () => {
+  const [userDet, setUserDet] = useState({ name: "Name" });
+  const userId = parseFloat(localStorage.getItem("user-phone"));
+
+  useEffect(() => {
+    function getUserDet() {
+      const db = getFirestore(app);
+      const userDetRef = doc(db, `users/${userId}`);
+
+      getDoc(userDetRef).then((snap) => {
+        setUserDet(snap.data());
+      });
+    }
+
+    getUserDet();
+  }, []);
+
   return (
     <div className="home">
-      <ActionSec />
+      <ActionSec userDet={userDet} />
       <div className="home-center">
         <HomeHeader />
         <HomeBarSec />
         <MusicSec />
       </div>
-      <ThirdSec />
+      <ThirdSec userDet={userDet} />
       <BottomNav />
     </div>
   );

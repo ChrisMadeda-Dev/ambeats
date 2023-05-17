@@ -1,9 +1,12 @@
 import "../styles/musicsec.css";
+import { BiPlayCircle } from "react-icons/bi";
 
 const MusicCont = ({ song, setSong }) => {
   return (
     <div className="music-cont" onClick={(e) => setSong(song.src)}>
-      <section></section>
+      <section>
+        <BiPlayCircle style={{fontSize:'20px'}} />
+      </section>
       <div className="music-cont-det">
         <p>{song.name}</p>
         <span>{song.size}</span>
