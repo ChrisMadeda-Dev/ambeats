@@ -1,7 +1,9 @@
 .music-sec {
-  flex: 0 0 80%;
+  flex: 0 0 80vh;
   width: 100%;
-  height: 100%;
+  min-height: 80vh;
+  max-height: auto;
+  margin-bottom: 200px;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,10 @@
 
 .music-cont:nth-child(1) {
   margin-top: 10px;
+}
+
+.music-cont:last-child {
+  margin-bottom: 100px;
 }
 
 .music-cont > section {
@@ -47,7 +53,7 @@
   font-size: 13px;
   color: #404040;
   padding: 0px 20px;
-  background-color: '';
+  background-color: "";
   height: 17px;
   width: 90%;
   overflow: hidden;
