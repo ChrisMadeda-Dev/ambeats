@@ -2,9 +2,11 @@ import { useState } from "react";
 import "../App.css";
 import UploadSec from "./UploadSec";
 import { BiHomeAlt2, BiSearchAlt, BiPlus } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const BottomNav = () => {
   const [toggleUpldSec, setToggleUpldSec] = useState(false);
+  const linkStyle = { color: "black" };
   function toggleUpldSecFunc() {
     setToggleUpldSec(!toggleUpldSec);
   }
@@ -12,10 +14,15 @@ const BottomNav = () => {
     <>
       <div className="bottom-nav">
         <span>
-          <BiHomeAlt2 />
+          <Link to={"/"} style={linkStyle}>
+            <BiHomeAlt2 />
+          </Link>
         </span>
         <span>
-          <BiSearchAlt />
+          <Link to={"/thirdsec"} style={linkStyle}>
+            {" "}
+            <BiSearchAlt />
+          </Link>
         </span>
         <span onClick={(e) => setToggleUpldSec(!toggleUpldSec)}>
           <BiPlus />

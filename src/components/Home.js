@@ -5,6 +5,7 @@ import ThirdSec from "./ThirdSec";
 import UploadSec from "./UploadSec";
 import MusicPlayer from "./MusicPlayer";
 import BottomNav from "./BottomNav";
+import ThirdSec2 from "./ThirdSec2";
 
 import { BiHeart, BiHeadphone, BiHeading } from "react-icons/bi";
 import { useEffect, useState } from "react";
@@ -62,8 +63,7 @@ const Home = () => {
         <HomeBarSec />
         <MusicSec />
       </div>
-      <ThirdSec userDet={userDet} />
-      <BottomNav />
+      <ThirdSec2 userDet={userDet} />
     </div>
   );
 };

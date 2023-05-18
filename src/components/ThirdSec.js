@@ -2,6 +2,7 @@ import "../styles/homesec.css";
 import { BiSearchAlt } from "react-icons/bi";
 
 const ThirdSec = () => {
+  
   return (
     <div className="third-sec">
       <div className="ts-top">

@@ -8,6 +8,9 @@ import {
 import "./App.css";
 import Home from "./components/Home";
 import SignIn from "./components/SignIn";
+import ThirdSec from "./components/ThirdSec";
+import ThirdSec2 from "./components/ThirdSec2";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   const userPhone = parseFloat(localStorage.getItem("user-phone"));
@@ -15,6 +18,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
         <Route index element={userPhone ? <Home /> : <SignIn />} />
+        <Route path="/thirdsec" element={<ThirdSec />} />
       </Route>
     )
   );
@@ -28,7 +32,10 @@ function App() {
 const Root = () => {
   return (
     <div>
-      <Outlet />
+      <div>
+        <Outlet />
+      </div>
+      <BottomNav />
     </div>
   );
 };

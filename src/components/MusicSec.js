@@ -22,6 +22,19 @@ const MusicSec = () => {
     setCurrentSong(src);
   }
 
+  function handleEnded() {
+    var array = [];
+    songs.map((song) => array.push(song.src));
+    if (array.length >= 1) {
+      const songNum = array.indexOf(currentSong);
+      if (songNum < array.length) {
+        setCurrentSong(array[songNum + 1]);
+      } else {
+        setCurrentSong(array[0]);
+      }
+    }
+  }
+
   useEffect(() => {
     function getSongs() {
       var array = [];
@@ -43,7 +56,7 @@ const MusicSec = () => {
           <MusicCont key={Math.random()} song={song} setSong={setSong} />
         ))}
       </div>
-      <MusicPlayer src={currentSong} />
+      <MusicPlayer src={currentSong} handleEnded={(e) => handleEnded()} />
     </>
   );
 };
