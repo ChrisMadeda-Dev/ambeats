@@ -1,14 +1,15 @@
 .music-sec {
-  flex: 0 0 80vh;
+  flex: 0 0 100vh;
   width: 100%;
   min-height: 80vh;
   max-height: auto;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
 }
 
 .music-cont {
