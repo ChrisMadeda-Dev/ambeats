@@ -28,11 +28,7 @@ const ActionSec = ({ userDet }) => {
               <BsPerson /> Profile
             </Link>
           </li>
-          <li>
-            <Link to={"/listenpage"}>
-              <BsPerson /> Listen
-            </Link>
-          </li>
+
           <li>
             <BiSearchAlt /> search
           </li>

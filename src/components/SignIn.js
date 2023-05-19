@@ -145,7 +145,7 @@ const SignIn = () => {
           {!toggle && <button onClick={addUser}>Sign In</button>}
           {toggle && (
             <button>
-              <Link to={"/"}>GO to chat Desk</Link>
+              <Link to={"/"}>Home</Link>
             </button>
           )}
 
@@ -174,7 +174,7 @@ const SignIn = () => {
           {!toggle && <button onClick={logInUser}>Log In</button>}
           {toggle && (
             <button>
-              <Link to={"/"}>GO to chat Desk</Link>
+              <Link to={"/"}>Home</Link>
             </button>
           )}
 

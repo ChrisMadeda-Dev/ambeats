@@ -51,6 +51,7 @@
   flex: 0 0 45%;
   width: 98%;
   color: "";
+  font-size: 14px;
   background-color: "";
   display: flex;
   flex-direction: column;
@@ -83,6 +84,7 @@
 .listen-inbox > li {
   width: 98%;
   height: 70px;
+  font-size: 14px;
   list-style-type: none;
   background-color: white;
   border-radius: 5px;
@@ -152,4 +154,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .listen-page {
+    height: 94vh;
+  }
+
+  .listen-center > ul {
+    flex: 0 0 60%;
+    width: 95%;
+  }
+
+  .listen-cont {
+    flex: 0 0 100%;
+  }
+  .lr-cont {
+    width: 100%;
+    flex: 0 0 100%;
+  }
 }
