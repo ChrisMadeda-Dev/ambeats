@@ -7,8 +7,9 @@ import app from "./Firebase";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-const MusicSec = () => {
-  const userId = parseFloat(localStorage.getItem("user-phone"));
+const MusicSec = ({ musicID }) => {
+  ///const userId = parseFloat(localStorage.getItem("user-phone"));
+  const userId = musicID;
   const [currentSong, setCurrentSong] = useState(
     "https://firebasestorage.googleapis.com/v0/b/ambeats21-2f1be.appspot.com/o/Minister%20GUC%20-%20Yours%20(LIVE).mp3?alt=media&token=9bb6d7dd-7cc9-447d-b768-ba8d951303df"
   );

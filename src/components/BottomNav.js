@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../App.css";
 import UploadSec from "./UploadSec";
 import { BiHomeAlt2, BiSearchAlt, BiPlus } from "react-icons/bi";
+import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 const BottomNav = () => {
@@ -19,11 +20,17 @@ const BottomNav = () => {
           </Link>
         </span>
         <span>
+          <Link to={"profile"} style={linkStyle}>
+            <BsPerson />
+          </Link>
+        </span>
+        <span>
           <Link to={"/thirdsec"} style={linkStyle}>
             {" "}
             <BiSearchAlt />
           </Link>
         </span>
+
         <span onClick={(e) => setToggleUpldSec(!toggleUpldSec)}>
           <BiPlus />
         </span>

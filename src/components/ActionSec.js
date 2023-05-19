@@ -2,6 +2,8 @@ import { useState } from "react";
 import "../styles/homesec.css";
 import UploadSec from "./UploadSec";
 import { BiHomeAlt2, BiSearchAlt, BiPlus } from "react-icons/bi";
+import { BsPerson } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ActionSec = ({ userDet }) => {
   const [toggleUploadSec, setToggleUploadSec] = useState(false);
@@ -20,6 +22,16 @@ const ActionSec = ({ userDet }) => {
         <ul>
           <li>
             <BiHomeAlt2 /> Home
+          </li>
+          <li>
+            <Link to={"/profile"}>
+              <BsPerson /> Profile
+            </Link>
+          </li>
+          <li>
+            <Link to={"/listenpage"}>
+              <BsPerson /> Listen
+            </Link>
           </li>
           <li>
             <BiSearchAlt /> search

@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 
 import app from "./Firebase";
 import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const HomeHeader = () => {
   return (
@@ -23,13 +24,16 @@ const HomeHeader = () => {
 
 const HomeBarSec = () => {
   const iconStyle = { fontSize: "25px" };
+  const linkStyle = { color: "#303030" };
   return (
     <div className="home-bar-sec">
       <div className="home-bar-block">
         <BiHeart style={iconStyle} />
       </div>
       <div className="home-bar-block">
-        <BiHeadphone style={iconStyle} />
+        <Link to={"/listenpage"} style={linkStyle}>
+          <BiHeadphone style={iconStyle} />
+        </Link>
       </div>
       <div className="home-bar-block">
         <BiHeading style={iconStyle} />
@@ -41,6 +45,7 @@ const HomeBarSec = () => {
 const Home = () => {
   const [userDet, setUserDet] = useState({ name: "Name" });
   const userId = parseFloat(localStorage.getItem("user-phone"));
+  const musicID = userId;
 
   useEffect(() => {
     function getUserDet() {
@@ -61,7 +66,7 @@ const Home = () => {
       <div className="home-center">
         <HomeHeader />
         <HomeBarSec />
-        <MusicSec />
+        <MusicSec musicID={musicID} />
       </div>
       <ThirdSec2 userDet={userDet} />
     </div>

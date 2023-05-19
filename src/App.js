@@ -11,6 +11,10 @@ import SignIn from "./components/SignIn";
 import ThirdSec from "./components/ThirdSec";
 import ThirdSec2 from "./components/ThirdSec2";
 import BottomNav from "./components/BottomNav";
+import Profile from "./components/Profile";
+import MusicPlayer from "./components/MusicPlayer";
+import ListenPage from "./components/ListenPage";
+import ListenRoom from "./components/ListenRoom";
 
 function App() {
   const userPhone = parseFloat(localStorage.getItem("user-phone"));
@@ -19,6 +23,9 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={userPhone ? <Home /> : <SignIn />} />
         <Route path="/thirdsec" element={<ThirdSec />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/listenpage" element={<ListenPage />} />
+        <Route path="/listenroom" element={<ListenRoom />} />
       </Route>
     )
   );
