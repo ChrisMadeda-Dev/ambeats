@@ -16,18 +16,24 @@ import app from "./Firebase";
 
 const ListenInboxCont = ({ doc, tglListenBox }) => {
   const linkStyle = { color: "#303030", textDecoration: "none" };
-  function addRecMusicID(recId) {
-    const convert = (recId / 9901) * 1099;
+  function addRecMusicID(userId, recId) {
+    const Id = tglListenBox ? userId : recId;
+    const convert = (Id / 9901) * 1099;
     localStorage.setItem("rec-music-id", convert);
   }
 
   return (
-    <div className="li-cont" onClick={(e) => addRecMusicID(doc.recId)}>
+    <div
+      className="li-cont"
+      onClick={(e) => addRecMusicID(doc.userId, doc.recId)}
+    >
       <span>
-        <Link to={"/listenroom"} style={linkStyle}>
-          {tglListenBox && doc.userName}
-          {!tglListenBox && doc.recName}
-        </Link>
+        {tglListenBox && (
+          <Link to={"/listenroom"} style={linkStyle}>
+            {tglListenBox && doc.userName}
+          </Link>
+        )}
+        {!tglListenBox && doc.recName}
       </span>
     </div>
   );
@@ -146,27 +152,33 @@ const Listen = () => {
             <span onClick={(e) => setTglListenBox(false)}>
               <CiInboxOut style={{ fontSize: "20px" }} />
             </span>
+            <span>{tglListenBox ? "Inbox" : "Outbox"}</span>
           </div>
           <ul className="listen-inbox">
-            {tglListenBox
-              ? listenInbox.map((a) => (
-                  <ListenInboxCont
-                    doc={a}
-                    key={Math.random()}
-                    tglListenBox={tglListenBox}
-                  />
-                ))
-              : listenOutbox.map((a) => (
-                  <ListenInboxCont
-                    doc={a}
-                    key={Math.random()}
-                    tglListenBox={tglListenBox}
-                  />
-                ))}
-            {listenInbox.length === 0 && "No Received ID"}
-            {listenOutbox.length === 0 &&
-              tglListenBox === false &&
-              "No Shared ID"}
+            {tglListenBox &&
+              listenInbox.map((a) => (
+                <ListenInboxCont
+                  doc={a}
+                  key={Math.random()}
+                  tglListenBox={tglListenBox}
+                />
+              ))}
+
+            {!tglListenBox &&
+              listenOutbox.map((a) => (
+                <ListenInboxCont
+                  doc={a}
+                  key={Math.random()}
+                  tglListenBox={tglListenBox}
+                />
+              ))}
+
+            {listenInbox.length === 0 && tglListenBox && (
+              <span className="no-id">No received ID</span>
+            )}
+            {listenOutbox.length === 0 && !tglListenBox && (
+              <span className="no-id">"No shared ID</span>
+            )}
           </ul>
         </div>
         <div className="listen-bottom">
