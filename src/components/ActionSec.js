@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 const ActionSec = ({ userDet }) => {
   const [toggleUploadSec, setToggleUploadSec] = useState(false);
+  const linkStyle = { color: "#303030", textDecoration: "none" };
 
   function toggleUpldSec() {
     setToggleUploadSec(!toggleUploadSec);
@@ -24,7 +25,7 @@ const ActionSec = ({ userDet }) => {
             <BiHomeAlt2 /> Home
           </li>
           <li>
-            <Link to={"/profile"}>
+            <Link to={"/profile"} style={linkStyle}>
               <BsPerson /> Profile
             </Link>
           </li>
