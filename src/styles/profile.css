@@ -1,7 +1,7 @@
 .profile-page {
   width: 100%;
   height: 100vh;
-  background-color: #303030;
+  background-color: #1b1b1b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +10,7 @@
 .profile-cont {
   flex: 0 0 80%;
   height: 100vh;
-  background-color: white;
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -39,7 +39,7 @@
 .profile-center > ul {
   width: 100%;
   height: 100%;
-  background-color: aliceblue;
+  background-color: #1b1b1b;
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
   height: 70px;
   margin: 5px 0px;
   font-size: 13px;
-  background-color: whitesmoke;
+  background-color: #353839;
   display: flex;
   justify-content: center;
   align-items: center;

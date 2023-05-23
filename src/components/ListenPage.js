@@ -15,7 +15,7 @@ import {
 import app from "./Firebase";
 
 const ListenInboxCont = ({ doc, tglListenBox }) => {
-  const linkStyle = { color: "#303030", textDecoration: "none" };
+  const linkStyle = { color: "white", textDecoration: "none" };
   function addRecMusicID(userId, recId) {
     const Id = tglListenBox ? userId : recId;
     const convert = (Id / 9901) * 1099;
