@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(teal, cadetblue);
-  background: #303030;
+  background: #1B1B1B;
 }
 
 .home-header {
@@ -16,6 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #1B1B1B;
 }
 
 .home-bar-sec {
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #1B1B1B;
 }
 
 .home-bar-sec > .home-bar-block {
@@ -52,7 +54,7 @@
 
 @media (max-width: 600px) {
 .home-header{
-  background: white;
+  background: #1b1b1b;
 }
   .home-center {
     width: 100%;
@@ -62,6 +64,7 @@
     width: 100%;
     flex: 0 0 20%;
     background: linear-gradient(white,aliceblue);
+  background: #1b1b1b;
   }
   .home-bar-sec > .home-bar-block {
     flex: 0 0 27%;

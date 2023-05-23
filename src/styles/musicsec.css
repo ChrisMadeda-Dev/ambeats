@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 80vh;
   max-height: auto;
-  background-color: aliceblue;
+  background-color: #1B1B1B;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background-color: #1B1B1B;
 }
 
 .music-cont:nth-child(1) {
@@ -51,7 +51,7 @@
 
 .music-cont-det > section {
   font-size: 13px;
-  color: #404040;
+  color: whitesmoke;
   padding: 0px 20px;
   background-color: "";
   height: 17px;
