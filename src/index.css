@@ -5,8 +5,6 @@
   color: white;
 }
 
-
-
 body {
   margin: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -59,4 +57,21 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #1b1b1b;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #353839;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

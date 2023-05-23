@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const ActionSec = ({ userDet }) => {
   const [toggleUploadSec, setToggleUploadSec] = useState(false);
-  const linkStyle = { color: "#303030", textDecoration: "none" };
+  const linkStyle = { color: "white", textDecoration: "none" };
 
   function toggleUpldSec() {
     setToggleUploadSec(!toggleUploadSec);
@@ -22,16 +22,16 @@ const ActionSec = ({ userDet }) => {
         </div>
         <ul>
           <li>
-            <BiHomeAlt2 /> Home
+            <BiHomeAlt2 /> <span>Home</span>
           </li>
           <li>
             <Link to={"/profile"} style={linkStyle}>
-              <BsPerson /> Profile
+              <BsPerson /> <span>Profile</span>
             </Link>
           </li>
 
           <li>
-            <BiSearchAlt /> search
+            <BiSearchAlt /> <span>search</span>
           </li>
         </ul>
         <button onClick={toggleUpldSec}> Upload</button>
