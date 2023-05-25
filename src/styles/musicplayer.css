@@ -17,7 +17,7 @@
   height: 60px;
   border-radius: 50%;
   background-color: #353839;
-  margin-left:10px ;
+  margin-left: 10px;
 }
 
 .music-player-sec {
@@ -124,5 +124,25 @@
     height: 7vh;
     width: 100%;
     bottom: 6vh;
+  }
+
+  .music-player-sec {
+    width: 95%;
+  }
+
+  .mp-sec-top > section {
+    background-color: '';
+    font-size: 12px;
+    color: whitesmoke;
+    flex: 0 0 8%;
+    margin-top: 10px;
+    align-items: flex-start;
+    padding: 3px 10px;
+    flex-wrap: nowrap;
+  }
+
+  .mp-controls > span {
+    height: 50px;
+    width: 50px;
   }
 }

@@ -17,7 +17,7 @@ const MusicPlayerSec = ({
   handlePlayPause,
   toggleMPSec,
 }) => {
-  const btnStyle = { fontSize: "45px" };
+  const btnStyle = { fontSize: "30px" };
 
   return (
     <div className="music-player-sec">

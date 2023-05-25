@@ -75,3 +75,10 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+@media (max-width:600px) {
+  ::-webkit-scrollbar {
+  width: 3px;
+  background-color: #1b1b1b;
+}
+}
