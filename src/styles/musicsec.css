@@ -3,12 +3,11 @@
   width: 100%;
   min-height: 80vh;
   max-height: auto;
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
 }
 
 .music-cont {
@@ -20,7 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
+  transition: ease-in-out .3s;
+}
+
+.music-cont:hover{
+  opacity: .7;
 }
 
 .music-cont:nth-child(1) {
@@ -49,13 +53,14 @@
   align-items: flex-start;
 }
 
+
 .music-cont-det > section {
   font-size: 13px;
   color: whitesmoke;
   padding: 0px 20px;
   background-color: "";
   height: 17px;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   word-break: break-all;
 }
