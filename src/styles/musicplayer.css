@@ -47,7 +47,12 @@
   width: 98%;
   flex: 0 0 70%;
   background-color: #1b1b1b;
-  border-radius: 30px;
+  border-radius: 20px;
+  animation: mpsecAnime;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 
 .mp-sec-top > section {
@@ -71,7 +76,7 @@
   align-items: center;
 }
 
-.mp-sec-center > .mp-controls {
+.mp-controls {
   width: 100%;
   flex: 0 0 100%;
   background-color: "";
@@ -119,6 +124,18 @@
   opacity: 0.7;
 }
 
+@keyframes mpsecAnime {
+  0% {
+    background-color: #303030;
+  }
+  50% {
+    background-color: #353839;
+  }
+  100% {
+    background-color: #303030;
+  }
+}
+
 @media (max-width: 600px) {
   .music-player {
     height: 7vh;
@@ -127,18 +144,42 @@
   }
 
   .music-player-sec {
-    width: 95%;
+    border-radius: 0px;
+    top: 0px;
+    width: 100%;
+    height: 87vh;
+  }
+
+  .mp-sec-top {
+    flex: 0 0 70%;
+    background-color: #1b1b1b;
+  }
+
+  .mp-sec-center {
+    flex: 0 0 20%;
+  }
+
+  .mp-sec-top > div {
+    width: 80%;
+    flex: 0 0 60%;
   }
 
   .mp-sec-top > section {
-    background-color: '';
     font-size: 12px;
-    color: whitesmoke;
-    flex: 0 0 8%;
-    margin-top: 10px;
-    align-items: flex-start;
+    flex: 0 0 15%;
+    width: 80%;
+    justify-content: flex-start;
+    align-items: center;
     padding: 3px 10px;
-    flex-wrap: nowrap;
+    margin-top: 10px;
+    background-color: '';
+    color: whitesmoke;
+  }
+
+  .mp-controls {
+    width: 95%;
+    flex: 0 0 80%;
+    background-color: #1b1b1b;
   }
 
   .mp-controls > span {
