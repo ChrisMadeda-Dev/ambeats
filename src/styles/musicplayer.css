@@ -1,6 +1,6 @@
 .music-player {
   width: 45%;
-  height: 7vh;
+  height: 8vh;
   position: fixed;
   bottom: 0vh;
   background-color: #1b1b1b;
@@ -13,15 +13,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #353839;
   margin-left: 10px;
 }
 
 .music-player-sec {
-  height: 50vh;
+  height: 60vh;
   width: 50%;
   background-color: #353839;
   position: fixed;
@@ -44,8 +44,11 @@
 }
 
 .mp-sec-top > div {
-  width: 98%;
+  width: 90%;
   flex: 0 0 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1b1b1b;
   border-radius: 20px;
   animation: mpsecAnime;
@@ -147,7 +150,7 @@
     border-radius: 0px;
     top: 0px;
     width: 100%;
-    height: 87vh;
+    height: 86vh;
   }
 
   .mp-sec-top {
@@ -157,6 +160,8 @@
 
   .mp-sec-center {
     flex: 0 0 20%;
+    justify-content: flex-start;
+    background-color: #1b1b1b;
   }
 
   .mp-sec-top > div {
@@ -172,18 +177,31 @@
     align-items: center;
     padding: 3px 10px;
     margin-top: 10px;
-    background-color: '';
+    background-color: "";
     color: whitesmoke;
   }
 
   .mp-controls {
     width: 95%;
-    flex: 0 0 80%;
-    background-color: #1b1b1b;
+    flex: 0 0 70%;
+    background-color: "";
+  }
+
+  .mp-controls > span {
+    background-color: #353839;
   }
 
   .mp-controls > span {
     height: 50px;
     width: 50px;
+  }
+
+  .mp-sec-bottom {
+    background-color: #1b1b1b;
+    width: 100%;
+  }
+
+  .mp-sec-bottom > span {
+    background-color: #353839;
   }
 }

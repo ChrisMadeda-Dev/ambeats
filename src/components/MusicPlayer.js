@@ -18,11 +18,14 @@ const MusicPlayerSec = ({
   toggleMPSec,
 }) => {
   const btnStyle = { fontSize: "30px" };
+  const [togPlayPause, setTogPlayPause] = useState(true);
 
   return (
     <div className="music-player-sec">
       <div className="mp-sec-top">
-        <div></div>
+        <div>
+          <BiMusic style={{ fontSize: "40px" }} />
+        </div>
         <section>{playingSong.name}</section>
       </div>
       <div className="mp-sec-center">
@@ -30,12 +33,26 @@ const MusicPlayerSec = ({
           <span>
             <BiSkipPrevious style={btnStyle} />
           </span>
-          <span onClick={(e) => handlePlayPause(true)}>
-            <BiPlay style={btnStyle} />
-          </span>
-          <span onClick={(e) => handlePlayPause(false)}>
-            <BiPause style={btnStyle} />
-          </span>
+          {togPlayPause && (
+            <span
+              onClick={(e) => {
+                handlePlayPause(true);
+                setTogPlayPause(!togPlayPause);
+              }}
+            >
+              <BiPlay style={btnStyle} />
+            </span>
+          )}
+          {!togPlayPause && (
+            <span
+              onClick={(e) => {
+                handlePlayPause(false);
+                setTogPlayPause(!togPlayPause);
+              }}
+            >
+              <BiPause style={btnStyle} />
+            </span>
+          )}
           <span>
             <BiSkipNext style={btnStyle} />
           </span>
