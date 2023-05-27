@@ -52,21 +52,22 @@
   background-color: #1b1b1b;
   border-radius: 20px;
   animation: mpsecAnime;
-  animation-duration: 6s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease;
 }
 
 .mp-sec-top > section {
-  width: 98%;
-  flex: 0 0 20%;
-  background-color: "";
-  word-wrap: nowrap;
+  width: 88%;
+  flex: 0 0 8%;
+  background-color: '';
+  white-space: nowrap;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
 
 .mp-sec-center {
@@ -131,11 +132,18 @@
   0% {
     background-color: #303030;
   }
-  50% {
-    background-color: #353839;
+  25% {
+    opacity: 0.8;
   }
+  50% {
+    opacity: 0.6;
+  }
+  75% {
+    opacity: 0.4;
+  }
+
   100% {
-    background-color: #303030;
+    opacity: 0.2;
   }
 }
 

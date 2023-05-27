@@ -30,7 +30,7 @@ const MusicPlayerSec = ({
       </div>
       <div className="mp-sec-center">
         <section className="mp-controls">
-          <span>
+          <span onClick={(e) => handlePrevNext(false)}>
             <BiSkipPrevious style={btnStyle} />
           </span>
           {togPlayPause && (
@@ -53,7 +53,7 @@ const MusicPlayerSec = ({
               <BiPause style={btnStyle} />
             </span>
           )}
-          <span>
+          <span onClick={(e) => handlePrevNext(true)}>
             <BiSkipNext style={btnStyle} />
           </span>
         </section>
@@ -81,7 +81,14 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
     setIsPlaying(!isPlaying);
   };
 
-  const handlePrevNext = (a) => {};
+  function handlePrevNext(state) {
+    
+    if (state) {
+      handleEnded(state);
+    } else {
+      handleEnded(state);
+    }
+  }
 
   return (
     <>
@@ -91,7 +98,7 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
           src={src}
           controls
           autoPlay={true}
-          onEnded={handleEnded}
+          onEnded={(e) => handleEnded(true)}
         />
         <span
           className="mini-player-btn"

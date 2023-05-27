@@ -29,20 +29,34 @@ const MusicSec = ({ musicID }) => {
     });
   }
 
-  //Handles what happen when a song ends
-  function handleEnded() {
+  // Handles what happen when a song ends
+  // Handles previous and next
+
+  function handleEnded(state) {
     var array = [];
     songs.map((song) => array.push(song.src));
+
     if (array.length >= 1) {
       const songNum = array.indexOf(currentSong);
+
       if (songNum < array.length) {
-        setCurrentSong(array[songNum + 1]);
+        if (songNum >= 0) {
+          var songRef;
+          state && setCurrentSong(array[songNum + 1]);
+          !state && setCurrentSong(array[songNum - 1]);
+
+          state && setSong(array[songNum + 1]);
+          !state && setSong(array[songNum - 1]);
+        } else {
+          setCurrentSong(array[0]);
+        }
       } else {
         setCurrentSong(array[0]);
       }
     }
   }
 
+  // gets songs from the datbase
   useEffect(() => {
     function getSongs() {
       var array = [];
@@ -67,7 +81,7 @@ const MusicSec = ({ musicID }) => {
       <MusicPlayer
         playingSong={playingSong.current}
         src={currentSong}
-        handleEnded={(e) => handleEnded()}
+        handleEnded={handleEnded}
       />
     </>
   );
