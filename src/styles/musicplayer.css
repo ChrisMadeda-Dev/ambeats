@@ -3,6 +3,7 @@
   height: 8vh;
   position: fixed;
   bottom: 0vh;
+  margin: auto;
   background-color: #1b1b1b;
   display: flex;
   justify-content: center;
@@ -52,16 +53,18 @@
   background-color: #1b1b1b;
   border-radius: 20px;
   animation: mpsecAnime;
-  animation-duration: 10s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 4s;
 }
 
 .mp-sec-top > section {
   width: 88%;
   flex: 0 0 8%;
-  background-color: '';
+  background-color: "";
   white-space: nowrap;
   overflow: hidden;
   display: flex;
@@ -132,26 +135,27 @@
   0% {
     background-color: #303030;
   }
-  25% {
-    opacity: 0.8;
-  }
+
   50% {
-    opacity: 0.6;
-  }
-  75% {
-    opacity: 0.4;
+    opacity: 0.8;
   }
 
   100% {
-    opacity: 0.2;
+    opacity: 0.6;
   }
 }
 
 @media (max-width: 600px) {
   .music-player {
-    height: 7vh;
+    height: 8vh;
     width: 100%;
     bottom: 6vh;
+  }
+
+  .mini-player-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
   }
 
   .music-player-sec {

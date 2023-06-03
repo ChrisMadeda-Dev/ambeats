@@ -7,9 +7,10 @@ import app from "./Firebase";
 
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 
-const MusicSec = ({ musicID }) => {
+const MusicSec = ({ musicID, playListId }) => {
   const userId = musicID;
   const playingSong = useRef();
+  const songsRef = useRef();
   const [currentSong, setCurrentSong] = useState(
     "https://firebasestorage.googleapis.com/v0/b/ambeats21-2f1be.appspot.com/o/Minister%20GUC%20-%20Yours%20(LIVE).mp3?alt=media&token=9bb6d7dd-7cc9-447d-b768-ba8d951303df"
   );
@@ -17,7 +18,16 @@ const MusicSec = ({ musicID }) => {
 
   //Firestore
   const db = getFirestore(app);
-  const songsRef = collection(db, `users/${userId}/songs`);
+  songsRef.current = collection(db, `users/${userId}/songs`);
+
+  //adjust the songsref to the playlist Ref if playlist is selected
+  if (playListId !== undefined) {
+    const id = parseFloat(localStorage.getItem("user-phone"));
+    songsRef.current = collection(
+      db,
+      `users/${id}/playList/${playListId}/songs`
+    );
+  }
 
   //Sets the details of the current song and its src
   function setSong(src) {
@@ -60,7 +70,7 @@ const MusicSec = ({ musicID }) => {
   useEffect(() => {
     function getSongs() {
       var array = [];
-      getDocs(songsRef).then((docs) => {
+      getDocs(songsRef.current).then((docs) => {
         docs.forEach((doc) => {
           array.push(doc.data());
         });

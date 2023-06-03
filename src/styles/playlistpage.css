@@ -1,0 +1,130 @@
+.play-list-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #353839;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.plp-cont {
+  width: 70%;
+  height: 100vh;
+  background-color: "";
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.plp-top {
+  flex: 0 0 20%;
+  width: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plp-center {
+  flex: 0 0 70%;
+  width: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.plp-bottom {
+  flex: 0 0 10%;
+  width: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-play-list {
+  flex: 0 0 100%;
+  width: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.my-pl-cont {
+  width: 95%;
+  flex: 0 0 70px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #404040;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+.play-list-room {
+  width: 100%;
+  height: 100vh;
+  background-color: #353839;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.plr-cont {
+  width: 70%;
+  flex: 0 0 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.plr-top {
+  flex: 0 0 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plr-center {
+  flex: 0 0 70%;
+  width: 100%;
+  background-color: saddlebrown;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.plr-bottom {
+  flex: 0 0 10%;
+  width: 100%;
+}
+
+.pl-music-cont {
+  width: 98%;
+  flex: 0 0 70px;
+  background-color: teal;
+}
+
+@media (max-width: 600px) {
+  .plp-cont {
+    width: 100%;
+    height: 94vh;
+  }
+  .plr-cont {
+    width: 100%;
+  }
+}

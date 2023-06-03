@@ -15,6 +15,8 @@ import Profile from "./components/Profile";
 import MusicPlayer from "./components/MusicPlayer";
 import ListenPage from "./components/ListenPage";
 import ListenRoom from "./components/ListenRoom";
+import PLayListPage from "./components/PLayListPage";
+import PlayListRoom from "./components/PlayListRoom";
 
 function App() {
   const userPhone = parseFloat(localStorage.getItem("user-phone"));
@@ -26,6 +28,8 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/listenpage" element={<ListenPage />} />
         <Route path="/listenroom" element={<ListenRoom />} />
+        <Route path="/playlist" element={<PLayListPage />} />
+        <Route path="/playlistroom" element={<PlayListRoom />} />
       </Route>
     )
   );

@@ -7,7 +7,13 @@ import MusicPlayer from "./MusicPlayer";
 import BottomNav from "./BottomNav";
 import ThirdSec2 from "./ThirdSec2";
 
-import { BiHeart, BiHeadphone, BiHeading } from "react-icons/bi";
+import {
+  BiHeart,
+  BiHeadphone,
+  BiHeading,
+  BiSolidPlaylist,
+} from "react-icons/bi";
+import { MdFeaturedPlayList } from "react-icons/md";
 import { useEffect, useState } from "react";
 
 import app from "./Firebase";
@@ -36,7 +42,10 @@ const HomeBarSec = () => {
         </Link>
       </div>
       <div className="home-bar-block">
-        <BiHeading style={iconStyle} />
+        <Link to="/playlist">
+          {" "}
+          <MdFeaturedPlayList style={iconStyle} />
+        </Link>
       </div>
     </div>
   );

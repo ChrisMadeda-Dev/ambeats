@@ -33,6 +33,8 @@ const ActionSec = ({ userDet }) => {
           <li>
             <BiSearchAlt /> <span>search</span>
           </li>
+
+          <li> <Link to={'/playlist'}>PLay List</Link></li>
         </ul>
         <button onClick={toggleUpldSec}> Upload</button>
       </div>{" "}

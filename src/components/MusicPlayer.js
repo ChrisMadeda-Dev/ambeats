@@ -59,9 +59,7 @@ const MusicPlayerSec = ({
         </section>
       </div>
       <div className="mp-sec-bottom">
-        <span onClick={toggleMPSec}>
-          <CgClose />
-        </span>
+       
       </div>
     </div>
   );
@@ -82,7 +80,6 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
   };
 
   function handlePrevNext(state) {
-    
     if (state) {
       handleEnded(state);
     } else {
@@ -104,7 +101,7 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
           className="mini-player-btn"
           onClick={(e) => setToggleMPSec(!toggleMPSec)}
         >
-          <BiMusic />
+          {!toggleMPSec ? <BiMusic /> : <CgClose />}
         </span>
       </div>
       {toggleMPSec && playingSong && (
