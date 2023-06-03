@@ -20,11 +20,11 @@
   align-items: center;
   justify-content: center;
   background-color: #1b1b1b;
-  transition: ease-in-out .3s;
+  transition: ease-in-out 0.3s;
 }
 
-.music-cont:hover{
-  opacity: .7;
+.music-cont:hover {
+  opacity: 0.7;
 }
 
 .music-cont:nth-child(1) {
@@ -53,7 +53,6 @@
   align-items: flex-start;
 }
 
-
 .music-cont-det > section {
   font-size: 13px;
   color: whitesmoke;
@@ -63,6 +62,7 @@
   width: 100%;
   overflow: hidden;
   word-break: break-all;
+  cursor: pointer;
 }
 
 .music-cont-det > span {
@@ -70,6 +70,46 @@
   color: grey;
   padding: 0px 20px;
   cursor: pointer;
+}
+
+.my-pl-list {
+  width: 50%;
+  height: 50vh;
+  background-color: coral;
+  position: fixed;
+  bottom: 20%;
+}
+
+.my-pl-list > ul {
+  width: 100%;
+  height: 100%;
+  background-color: #1b1b1b;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.my-pl-list > ul > span {
+  margin: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+}
+
+.my-pl-list > ul > li {
+  width: 98%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #353839;
+  margin-top: 5px;
 }
 
 @media (max-width: 600px) {

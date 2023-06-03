@@ -5,9 +5,64 @@ import song from "../audios/1.mp3";
 import { useEffect, useRef, useState } from "react";
 import app from "./Firebase";
 
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  setDoc,
+  doc,
+} from "firebase/firestore";
+
+const MyPlList = ({ song, tglMyPll }) => {
+  const userId = parseFloat(localStorage.getItem("user-phone"));
+  const [playList, setPlayList] = useState([]);
+
+  const db = getFirestore(app);
+  const plRef = collection(db, `users/${userId}/playList`);
+
+  function addPlId(a) {
+
+     const playlistRef = doc(
+       db,
+       `users/${userId}/playList/${a.playListId}/songs/${song.name}`
+     );
+     setDoc(playlistRef, song);
+     alert("Great!! Song is added to playlist");
+  }
+
+  useEffect(() => {
+    function getPlayList() {
+      var array = [];
+
+      getDocs(plRef).then((docs) => {
+        docs.forEach((doc) => {
+          array.push(doc.data());
+        });
+        setPlayList([...array]);
+      });
+    }
+
+    getPlayList();
+  }, []);
+
+  return (
+    <div className="my-pl-list">
+      <ul>
+        <span onClick={tglMyPll}>Close</span>
+        {playList.map((a) => (
+          <li key={Math.random()} onClick={(e) => addPlId(a)}>
+            {" "}
+            {a.playListName}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const MusicSec = ({ musicID, playListId }) => {
+  const [tglMyPll, SetTglMyPll] = useState(false);
+  const [toPlSong, setToPlSong] = useState();
   const userId = musicID;
   const playingSong = useRef();
   const songsRef = useRef();
@@ -27,6 +82,13 @@ const MusicSec = ({ musicID, playListId }) => {
       db,
       `users/${id}/playList/${playListId}/songs`
     );
+  }
+
+  //Set audio to a playList
+  function setToPl(song) {
+    SetTglMyPll(!tglMyPll);
+    setToPlSong(song);
+    console.log(song);
   }
 
   //Sets the details of the current song and its src
@@ -85,7 +147,12 @@ const MusicSec = ({ musicID, playListId }) => {
     <>
       <div className="music-sec">
         {songs.map((song) => (
-          <MusicCont key={Math.random()} song={song} setSong={setSong} />
+          <MusicCont
+            key={Math.random()}
+            song={song}
+            setSong={setSong}
+            setToPl={setToPl}
+          />
         ))}
       </div>
       <MusicPlayer
@@ -93,6 +160,9 @@ const MusicSec = ({ musicID, playListId }) => {
         src={currentSong}
         handleEnded={handleEnded}
       />
+      {tglMyPll && (
+        <MyPlList song={toPlSong} tglMyPll={(e) => SetTglMyPll(!tglMyPll)} />
+      )}
     </>
   );
 };
