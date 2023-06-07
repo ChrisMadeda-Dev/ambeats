@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../styles/homesec.css";
 import UploadSec from "./UploadSec";
 import { BiHomeAlt2, BiSearchAlt, BiPlus } from "react-icons/bi";
+import { CgPlayList } from "react-icons/cg";
 import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -34,7 +35,12 @@ const ActionSec = ({ userDet }) => {
             <BiSearchAlt /> <span>search</span>
           </li>
 
-          <li> <Link to={'/playlist'}>PLay List</Link></li>
+          <li>
+            {" "}
+            <Link to={"/playlist"} style={linkStyle}>
+              <CgPlayList /> <span>playlist</span>
+            </Link>
+          </li>
         </ul>
         <button onClick={toggleUpldSec}> Upload</button>
       </div>{" "}

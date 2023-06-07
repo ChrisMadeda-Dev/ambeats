@@ -14,6 +14,7 @@ import {
   BiSolidPlaylist,
 } from "react-icons/bi";
 import { MdFeaturedPlayList } from "react-icons/md";
+import {CgPlayList} from 'react-icons/cg'
 import { useEffect, useState } from "react";
 
 import app from "./Firebase";
@@ -44,7 +45,7 @@ const HomeBarSec = () => {
       <div className="home-bar-block">
         <Link to="/playlist">
           {" "}
-          <MdFeaturedPlayList style={iconStyle} />
+          <CgPlayList style={iconStyle} />
         </Link>
       </div>
     </div>

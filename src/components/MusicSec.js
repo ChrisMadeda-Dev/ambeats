@@ -5,6 +5,8 @@ import song from "../audios/1.mp3";
 import { useEffect, useRef, useState } from "react";
 import app from "./Firebase";
 
+import {CgClose} from 'react-icons/cg'
+
 import {
   getFirestore,
   collection,
@@ -13,6 +15,8 @@ import {
   doc,
 } from "firebase/firestore";
 
+
+// Shows my avalable playlist
 const MyPlList = ({ song, tglMyPll }) => {
   const userId = parseFloat(localStorage.getItem("user-phone"));
   const [playList, setPlayList] = useState([]);
@@ -21,13 +25,12 @@ const MyPlList = ({ song, tglMyPll }) => {
   const plRef = collection(db, `users/${userId}/playList`);
 
   function addPlId(a) {
-
-     const playlistRef = doc(
-       db,
-       `users/${userId}/playList/${a.playListId}/songs/${song.name}`
-     );
-     setDoc(playlistRef, song);
-     alert("Great!! Song is added to playlist");
+    const playlistRef = doc(
+      db,
+      `users/${userId}/playList/${a.playListId}/songs/${song.name}`
+    );
+    setDoc(playlistRef, song);
+    alert("Great!! Song is added to playlist");
   }
 
   useEffect(() => {
@@ -48,7 +51,7 @@ const MyPlList = ({ song, tglMyPll }) => {
   return (
     <div className="my-pl-list">
       <ul>
-        <span onClick={tglMyPll}>Close</span>
+        <span onClick={tglMyPll}><CgClose/></span>
         {playList.map((a) => (
           <li key={Math.random()} onClick={(e) => addPlId(a)}>
             {" "}
@@ -60,6 +63,8 @@ const MyPlList = ({ song, tglMyPll }) => {
   );
 };
 
+
+// The Music Section
 const MusicSec = ({ musicID, playListId }) => {
   const [tglMyPll, SetTglMyPll] = useState(false);
   const [toPlSong, setToPlSong] = useState();

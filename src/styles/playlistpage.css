@@ -57,7 +57,7 @@
 
 .my-pl-cont {
   width: 95%;
-  flex: 0 0 70px;
+  flex: 0 0 65px;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #404040;
@@ -66,7 +66,21 @@
   align-items: center;
 }
 
+.my-pl-cont > section:nth-child(1) {
+  flex: 0 0 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.my-pl-cont > section:nth-child(2) {
+  flex: 0 0 90%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .play-list-room {
   width: 100%;
@@ -97,6 +111,7 @@
   justify-content: center;
   align-items: center;
 }
+
 
 .plr-center {
   flex: 0 0 70%;

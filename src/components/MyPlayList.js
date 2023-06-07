@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import "../styles/playlistpage.css";
+import { BsMusicNoteList } from "react-icons/bs";
 import app from "./Firebase";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const MyPlCont = ({ playList }) => {
-  const linkStyle = { textDecoration: "none", padding:'15px' };
+  const linkStyle = { textDecoration: "none", padding: "15px" };
   function setPlId() {
     localStorage.setItem("play-list-id", playList.playListId);
   }
   return (
     <div className="my-pl-cont" onClick={setPlId}>
-      <Link to="/playlistroom" style={linkStyle}>
-        <p>{playList.playListName}</p>
-        <span style={{ fontSize: "12px" }}>{playList.playListId}</span>
-      </Link>
+      <section>
+        <BsMusicNoteList />
+      </section>
+      <section>
+        <Link to="/playlistroom" style={linkStyle}>
+          <p>{playList.playListName}</p>
+        </Link>
+      </section>
     </div>
   );
 };
