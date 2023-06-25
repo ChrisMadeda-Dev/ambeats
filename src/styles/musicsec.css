@@ -11,7 +11,7 @@
 }
 
 .music-cont {
-  flex: 0 0 80px;
+  flex: 0 0 70px;
   width: 98%;
   margin: 3px 0px;
   overflow: hidden;
@@ -63,6 +63,7 @@
   overflow: hidden;
   word-break: break-all;
   cursor: pointer;
+  user-select: none;
 }
 
 .music-cont-det > span {
@@ -70,6 +71,7 @@
   color: grey;
   padding: 0px 20px;
   cursor: pointer;
+  user-select: none;
 }
 
 .my-pl-list {

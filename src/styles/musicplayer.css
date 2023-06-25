@@ -1,5 +1,5 @@
 .music-player {
-  width: 50%;
+  width: 49%;
   height: 8vh;
   position: fixed;
   bottom: 0vh;
@@ -8,6 +8,61 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mp-song-name {
+  flex: 0 0 40%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #353839;
+  border-radius: 30px;
+  font-size: 15px;
+  overflow: hidden;
+  padding: 0px 10px;
+}
+
+.mp-song-name > p {
+  width: auto;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  user-select: none;
+  transition: .3s ease-in-out;
+}
+
+.mp-song-name > p:hover{
+  opacity: 0.5;
+}
+
+.mini-player-controls {
+  flex: 0 0 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: "";
+}
+
+.mini-player-controls > span {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #353839;
+  border-radius: 50%;
+  margin: 0px 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.mini-player-controls > span:hover {
+  opacity: 0.6;
 }
 
 .mini-player-btn {
@@ -19,6 +74,7 @@
   border-radius: 50%;
   background-color: #353839;
   margin-left: 10px;
+  display: none;
 }
 
 .music-player-sec {
@@ -150,6 +206,12 @@
     height: 8vh;
     width: 100%;
     bottom: 6vh;
+  }
+
+  .mini-player-controls > span {
+    width: 40px;
+    height: 40px;
+    margin: 0px 7px;
   }
 
   .mini-player-btn {

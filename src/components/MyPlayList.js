@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/playlistpage.css";
-import { BsMusicNoteList } from "react-icons/bs";
+import { BsMusicNoteList, BsThreeDotsVertical } from "react-icons/bs";
 import app from "./Firebase";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
@@ -17,8 +17,11 @@ const MyPlCont = ({ playList }) => {
       </section>
       <section>
         <Link to="/playlistroom" style={linkStyle}>
-          <p>{playList.playListName}</p>
+          <p className="playlist-name">{playList.playListName}</p>
         </Link>
+      </section>
+      <section>
+      <BsThreeDotsVertical />
       </section>
     </div>
   );

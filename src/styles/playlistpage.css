@@ -59,7 +59,7 @@
   width: 95%;
   flex: 0 0 65px;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 7px;
   background-color: #404040;
   display: flex;
   justify-content: flex-start;
@@ -75,12 +75,20 @@
 }
 
 .my-pl-cont > section:nth-child(2) {
-  flex: 0 0 90%;
+  flex: 0 0 80%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+
+.playlist-name{
+  user-select: none;
+}
+
+.my-pl-cont > section:nth-child(3){
+    flex: 0 0 10%;
+  }
 
 .play-list-room {
   width: 100%;
@@ -147,6 +155,16 @@
 
   .my-pl-cont > section:nth-child(1){
     flex: 0 0 20%;
+  }
+  .my-pl-cont > section:nth-child(2){
+    flex: 0 0 70%;
+  }
+  .my-pl-cont > section:nth-child(3){
+    flex: 0 0 10%;
+  }
+
+  .playlist-name{
+    font-size: 13px;
   }
 
   .plp-cont {

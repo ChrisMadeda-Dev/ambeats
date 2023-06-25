@@ -13,6 +13,7 @@ import { CgClose } from "react-icons/cg";
 const MusicPlayerSec = ({
   audio,
   playingSong,
+  isPlaying,
   handlePrevNext,
   handlePlayPause,
   toggleMPSec,
@@ -33,7 +34,7 @@ const MusicPlayerSec = ({
           <span onClick={(e) => handlePrevNext(false)}>
             <BiSkipPrevious style={btnStyle} />
           </span>
-          {togPlayPause && (
+          {!isPlaying && (
             <span
               onClick={(e) => {
                 handlePlayPause(true);
@@ -43,7 +44,7 @@ const MusicPlayerSec = ({
               <BiPlay style={btnStyle} />
             </span>
           )}
-          {!togPlayPause && (
+          {isPlaying && (
             <span
               onClick={(e) => {
                 handlePlayPause(false);
@@ -59,7 +60,9 @@ const MusicPlayerSec = ({
         </section>
       </div>
       <div className="mp-sec-bottom">
-       
+        <span onClick={toggleMPSec}>
+          <CgClose />
+        </span>
       </div>
     </div>
   );
@@ -69,6 +72,12 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
   const [toggleMPSec, setToggleMPSec] = useState(false);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const iconStyle = {
+    fontSize: "30px",
+    margin: "0px",
+    padding: "0px",
+    margin: "0px 10px",
+  };
 
   const handlePlayPause = (a) => {
     if (a) {
@@ -93,21 +102,56 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
         <audio
           ref={audioRef}
           src={src}
-          controls
           autoPlay={false}
           onEnded={(e) => handleEnded(true)}
         />
-        <span
-          className="mini-player-btn"
-          onClick={(e) => setToggleMPSec(!toggleMPSec)}
-        >
-          {!toggleMPSec ? <BiMusic /> : <CgClose />}
-        </span>
+        <section className="mp-song-name" onClick={(e) => setToggleMPSec(true)}>
+          <p>{playingSong ? playingSong.name : <span>Song Name</span>}</p>
+        </section>
+
+        <section className="mini-player-controls">
+          <span>
+            {" "}
+            <BiSkipPrevious
+              style={iconStyle}
+              onClick={(e) => handlePrevNext(false)}
+            />
+          </span>
+          <span>
+            {" "}
+            {isPlaying ? (
+              <BiPause
+                style={iconStyle}
+                onClick={(e) => {
+                  audioRef.current.pause();
+                  setIsPlaying(false);
+                }}
+              />
+            ) : (
+              <BiPlay
+                style={iconStyle}
+                onClick={(e) => {
+                  audioRef.current.play();
+                  setIsPlaying(true);
+                }}
+              />
+            )}
+          </span>
+
+          <span>
+            {" "}
+            <BiSkipNext
+              style={iconStyle}
+              onClick={(e) => handlePrevNext(true)}
+            />
+          </span>
+        </section>
       </div>
       {toggleMPSec && playingSong && (
         <MusicPlayerSec
           audio={audioRef.current}
           playingSong={playingSong}
+          isPlaying={isPlaying}
           handlePrevNext={handlePrevNext}
           handlePlayPause={handlePlayPause}
           toggleMPSec={(e) => setToggleMPSec(!toggleMPSec)}
@@ -116,5 +160,14 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
     </>
   );
 };
+
+/* 
+ <span className="mini-player-btn"
+          onClick={(e) => setToggleMPSec(!toggleMPSec)}
+        >
+          {!toggleMPSec ? <BiMusic /> : <CgClose />}
+        </span>
+
+*/
 
 export default MusicPlayer;
