@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import "../styles/playlistpage.css";
 import { BsMusicNoteList, BsThreeDotsVertical } from "react-icons/bs";
 import app from "./Firebase";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  orderBy,
+  query,
+} from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 const MyPlCont = ({ playList }) => {
@@ -21,7 +27,7 @@ const MyPlCont = ({ playList }) => {
         </Link>
       </section>
       <section>
-      <BsThreeDotsVertical />
+        <BsThreeDotsVertical />
       </section>
     </div>
   );
@@ -37,8 +43,9 @@ const MyPlayList = () => {
     // Get user playlist
     function getMyPlayList() {
       const plRef = collection(db, `users/${userId}/playList`);
+      const q = query(plRef, orderBy("time", "desc"));
       var array = [];
-      getDocs(plRef).then((docs) => {
+      getDocs(q).then((docs) => {
         docs.forEach((doc) => {
           array.push(doc.data());
         });

@@ -6,7 +6,7 @@
   margin: auto;
   background-color: #1b1b1b;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -211,7 +211,7 @@
   .mini-player-controls > span {
     width: 40px;
     height: 40px;
-    margin: 0px 7px;
+    margin: 0px 4px;
   }
 
   .mini-player-btn {

@@ -111,10 +111,11 @@
 
 .upload-sec {
   width: 40%;
-  height: 50vh;
+  height: 30vh;
+  margin: auto;
   background-color: blanchedalmond;
   position: fixed;
-  bottom: 30%;
+  bottom: 10%;
   border-radius: 10px;
   z-index: 3;
 }

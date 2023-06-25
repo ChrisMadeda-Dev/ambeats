@@ -102,7 +102,7 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
         <audio
           ref={audioRef}
           src={src}
-          autoPlay={false}
+          autoPlay={playingSong ? true : false}
           onEnded={(e) => handleEnded(true)}
         />
         <section className="mp-song-name" onClick={(e) => setToggleMPSec(true)}>

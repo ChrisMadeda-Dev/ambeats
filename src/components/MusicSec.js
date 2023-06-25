@@ -13,6 +13,8 @@ import {
   getDocs,
   setDoc,
   doc,
+  query,
+  orderBy,
 } from "firebase/firestore";
 
 
@@ -135,9 +137,10 @@ const MusicSec = ({ musicID, playListId }) => {
 
   // gets songs from the datbase
   useEffect(() => {
+    const q=query(songsRef.current, orderBy('time','desc'))
     function getSongs() {
       var array = [];
-      getDocs(songsRef.current).then((docs) => {
+      getDocs(q).then((docs) => {
         docs.forEach((doc) => {
           array.push(doc.data());
         });

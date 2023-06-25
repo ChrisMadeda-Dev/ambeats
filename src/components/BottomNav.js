@@ -12,7 +12,7 @@ const BottomNav = () => {
     setToggleUpldSec(!toggleUpldSec);
   }
   return (
-    <>
+    <div className="bottom-nav-section">
       <div className="bottom-nav">
         <span>
           <Link to={"/"} style={linkStyle}>
@@ -36,7 +36,7 @@ const BottomNav = () => {
         </span>
       </div>
       {toggleUpldSec && <UploadSec toggleUpldSec={toggleUpldSecFunc} />}
-    </>
+    </div>
   );
 };
 
