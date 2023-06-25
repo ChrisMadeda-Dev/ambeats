@@ -94,7 +94,7 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
           ref={audioRef}
           src={src}
           controls
-          autoPlay={true}
+          autoPlay={false}
           onEnded={(e) => handleEnded(true)}
         />
         <span

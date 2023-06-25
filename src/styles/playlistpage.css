@@ -135,6 +135,20 @@
 }
 
 @media (max-width: 600px) {
+
+  .play-list-page {
+    height: 100vh;
+    margin: 0px;
+  }
+
+  .my-pl-cont {
+    flex: 0 0 50px;
+  }
+
+  .my-pl-cont > section:nth-child(1){
+    flex: 0 0 20%;
+  }
+
   .plp-cont {
     width: 100%;
     height: 94vh;
