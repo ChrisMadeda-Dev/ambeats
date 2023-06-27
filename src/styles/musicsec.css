@@ -21,6 +21,7 @@
   justify-content: center;
   background-color: #1b1b1b;
   transition: ease-in-out 0.3s;
+  user-select: none;
 }
 
 .music-cont:hover {
@@ -42,6 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .music-cont-det {
@@ -64,6 +66,7 @@
   word-break: break-all;
   cursor: pointer;
   user-select: none;
+  user-select: none;
 }
 
 .music-cont-det > span {
@@ -71,6 +74,7 @@
   color: grey;
   padding: 0px 20px;
   cursor: pointer;
+  user-select: none;
   user-select: none;
 }
 
