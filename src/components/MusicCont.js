@@ -1,5 +1,5 @@
 import "../styles/musicsec.css";
-import { BiPlayCircle } from "react-icons/bi";
+import { BiPlayCircle, BiDotsVerticalRounded } from "react-icons/bi";
 import app from "./Firebase";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 
@@ -27,6 +27,12 @@ const MusicCont = ({ song, setSong, setToPl }) => {
       <div className="music-cont-det" onClick={(e) => setSong(song.src)}>
         <section>{song.name}</section>
         <span>{song.size}</span>
+      </div>
+      <div className="music-cont-actions">
+        {" "}
+        <span className="mc-actions-btn">
+          <BiDotsVerticalRounded style={{ color: "whitesmoke" }} />
+        </span>{" "}
       </div>
     </div>
   );

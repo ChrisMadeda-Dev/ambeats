@@ -40,6 +40,12 @@
   opacity: 0.5;
 }
 
+.mp-song-name > p >span{
+  font-size: 14px;
+  color: whitesmoke;
+  opacity: .8;
+}
+
 .mini-player-controls {
   flex: 0 0 40%;
   height: 100%;

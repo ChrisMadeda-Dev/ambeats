@@ -11,7 +11,8 @@ import {
   getDoc,
 } from "firebase/firestore";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+//navigate=useNavigate()
 
 const SignIn = () => {
   const [toggle, setToggle] = useState(false);
@@ -57,6 +58,9 @@ const SignIn = () => {
 
       alert("Thank you for joining amchat40");
       alert("Go to chat page : CLick the button to get started");
+
+      //navigate('/')
+      //window.location.href='/';
     } else {
       pin !== pin2 && alert("Confirm if Pin Matches");
       phone !== phone2 && alert("Confirm Phone Number Matches");

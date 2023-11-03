@@ -72,12 +72,19 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
   const [toggleMPSec, setToggleMPSec] = useState(false);
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [initialPlayState, setInitialPlayState] = useState(false);
   const iconStyle = {
     fontSize: "30px",
     margin: "0px",
     padding: "0px",
     margin: "0px 10px",
   };
+
+  //Changes the default play button to pause when music is selected
+  if (playingSong && isPlaying === false && initialPlayState === false) {
+    setIsPlaying(true);
+    setInitialPlayState(true);
+  }
 
   const handlePlayPause = (a) => {
     if (a) {
@@ -106,7 +113,7 @@ const MusicPlayer = ({ playingSong, src, handleEnded }) => {
           onEnded={(e) => handleEnded(true)}
         />
         <section className="mp-song-name" onClick={(e) => setToggleMPSec(true)}>
-          <p>{playingSong ? playingSong.name : <span>Song Name</span>}</p>
+          <p>{playingSong ? playingSong.name : <span>Song Title</span>}</p>
         </section>
 
         <section className="mini-player-controls">
