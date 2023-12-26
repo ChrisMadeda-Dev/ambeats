@@ -59,8 +59,10 @@ const SignIn = () => {
       alert("Thank you for joining amchat40");
       alert("Go to chat page : CLick the button to get started");
 
+      //Take to home
+      window.location.href = "/";
+
       //navigate('/')
-      //window.location.href='/';
     } else {
       pin !== pin2 && alert("Confirm if Pin Matches");
       phone !== phone2 && alert("Confirm Phone Number Matches");
@@ -87,6 +89,7 @@ const SignIn = () => {
             localStorage.setItem("user-phone", phone2);
 
             alert("Welcome back, Great to have you again");
+            window.location.href = "/";
             setToggle(!toggle);
           } else {
             alert("Please confirm your pin");
@@ -175,12 +178,7 @@ const SignIn = () => {
               setPin(e.target.value);
             }}
           />
-          {!toggle && <button onClick={logInUser}>Log In</button>}
-          {toggle && (
-            <button>
-              <Link to={"/"}>Home</Link>
-            </button>
-          )}
+          <button onClick={logInUser}>Log In</button>
 
           <span onClick={(e) => setToggleLogIn(!toggleLogIn)}>
             Sign up Instead

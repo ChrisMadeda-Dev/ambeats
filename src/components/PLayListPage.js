@@ -45,13 +45,13 @@ const PLayListPage = () => {
     <div className="play-list-page">
       <div className="plp-cont">
         <div className="plp-top">
-          <h1>PlayList</h1>
+          <h1>MY PLAYLIST</h1>
         </div>
         <div className="plp-center">
           <MyPlayList />
         </div>
         <div className="plp-bottom">
-          <button onClick={addPlayList}>Add PlayList</button>
+          <button className="add-playlist-btn" onClick={addPlayList}>Add PlayList</button>
         </div>
       </div>
     </div>

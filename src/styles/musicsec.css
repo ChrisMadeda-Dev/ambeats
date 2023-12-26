@@ -46,7 +46,7 @@
 }
 
 .music-cont-det {
-  flex: 0 0 75%;
+  flex: 0 0 70%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -83,6 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: "";
 }
 
 .my-pl-list {
@@ -142,9 +143,13 @@
     width: 98%;
   }
   .music-cont-det {
-    flex: 0 0 85%;
+    flex: 0 0 73%;
     height: 50px;
     background-color: "";
+  }
+
+  .music-cont-actions {
+    flex: 0 0 7%;
   }
 
   .my-pl-list {

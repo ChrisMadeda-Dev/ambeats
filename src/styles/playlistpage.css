@@ -1,7 +1,7 @@
 .play-list-page {
   width: 100%;
   height: 100vh;
-  background-color: #353839;
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -26,6 +26,10 @@
   justify-content: center;
   align-items: center;
 }
+.plp-top > h1 {
+  font-size: 40px;
+  font-family: sans-serif;
+}
 
 .plp-center {
   flex: 0 0 70%;
@@ -45,9 +49,23 @@
   align-items: center;
 }
 
+.add-playlist-btn {
+  height: 35px;
+  width: 30%;
+  background-color: transparent;
+  color: grey;
+  border: 1px solid #353839;
+  transition: ease-in-out 0.5s;
+}
+
+.add-playlist-btn:hover {
+  color: white;
+}
+
 .my-play-list {
   flex: 0 0 100%;
   width: 100%;
+  gap: 15px;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -56,11 +74,10 @@
 }
 
 .my-pl-cont {
-  width: 95%;
-  flex: 0 0 65px;
-  margin-top: 10px;
-  border-radius: 7px;
-  background-color: #404040;
+  width: 80%;
+  flex: 0 0 100px;
+  border-radius: 10px;
+  background-color: #353839;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -82,13 +99,13 @@
   align-items: center;
 }
 
-.playlist-name{
+.playlist-name {
   user-select: none;
 }
 
-.my-pl-cont > section:nth-child(3){
-    flex: 0 0 10%;
-  }
+.my-pl-cont > section:nth-child(3) {
+  flex: 0 0 10%;
+}
 
 .play-list-room {
   width: 100%;
@@ -103,6 +120,7 @@
 .plr-cont {
   width: 70%;
   flex: 0 0 100%;
+  border-right: 7px solid #1b1b1b;
   background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
@@ -113,16 +131,22 @@
 }
 
 .plr-top {
-  flex: 0 0 20%;
+  flex: 0 0 25%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(#353839,#1b1b1b);
 }
 
+.plr-top > h1 {
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
 
 .plr-center {
-  flex: 0 0 70%;
+  flex: 0 0 65%;
   width: 100%;
   background-color: saddlebrown;
   display: flex;
@@ -143,7 +167,6 @@
 }
 
 @media (max-width: 600px) {
-
   .play-list-page {
     height: 100vh;
     margin: 0px;
@@ -153,17 +176,17 @@
     flex: 0 0 50px;
   }
 
-  .my-pl-cont > section:nth-child(1){
+  .my-pl-cont > section:nth-child(1) {
     flex: 0 0 20%;
   }
-  .my-pl-cont > section:nth-child(2){
+  .my-pl-cont > section:nth-child(2) {
     flex: 0 0 70%;
   }
-  .my-pl-cont > section:nth-child(3){
+  .my-pl-cont > section:nth-child(3) {
     flex: 0 0 10%;
   }
 
-  .playlist-name{
+  .playlist-name {
     font-size: 13px;
   }
 

@@ -57,7 +57,7 @@ const PlayListRoom = () => {
     <div className="play-list-room">
       <div className="plr-cont">
         <div className="plr-top">
-          <h1>Play Room</h1>
+          <h1>PLAY ROOM</h1>
         </div>
         <div className="plr-center">
           <MusicSec playListId={playListId} />

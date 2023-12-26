@@ -30,6 +30,7 @@
 }
 
 .action-sec > ul {
+  gap: 8px;
   flex: 0 0 60%;
   width: 100%;
   background-color: "";
@@ -42,9 +43,8 @@
 
 .action-sec > ul > li {
   width: 60%;
-  height: 60px;
-  margin: 10px 0px;
-  border-radius: 40px;
+  height: 50px;
+  border-radius: 20px;
   background: #353839;
   color: white;
   display: flex;
