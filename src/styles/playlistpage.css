@@ -136,7 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#353839, #1b1b1b);
+  background-color: #1b1b1b;
 }
 
 .plr-top > h1 {
@@ -172,10 +172,6 @@
     margin: 0px;
   }
 
-  .plp-top {
-    background: linear-gradient(#353839, #1b1b1b);
-  }
-
   .plp-top > h1 {
     font-size: 30px;
   }
@@ -186,7 +182,7 @@
 
   .my-pl-cont {
     width: 90%;
-    flex: 0 0 80px;
+    flex: 0 0 70px;
   }
 
   .my-pl-cont > section:nth-child(1) {
@@ -208,6 +204,9 @@
     height: 94vh;
   }
 
+  .plr-top>h1{
+    font-size: 30px;
+  }
   .plr-cont {
     width: 100%;
     border: none;

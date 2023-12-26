@@ -8,6 +8,8 @@ const Profile = () => {
   const musicId = (userId / 9901) * 1099;
 
   function logUserOut() {
+    console.log("looged out");
+    alert("You successfuly logged out");
     localStorage.clear();
     window.location.href = "/";
   }
@@ -27,7 +29,7 @@ const Profile = () => {
               <Link to="/playlist">My Playlist</Link>
             </li>
             <li>
-              <button className="log-out-btn" onClick={(e) => logUserOut}>
+              <button className="log-out-btn" onClick={logUserOut}>
                 Log Out
               </button>
             </li>

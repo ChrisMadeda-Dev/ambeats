@@ -1,9 +1,13 @@
 .signin-page {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: coral;
   font-family: "Courier New", Courier, monospace;
 }
 

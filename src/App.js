@@ -41,12 +41,13 @@ function App() {
 }
 
 const Root = () => {
+  const userPhone = parseFloat(localStorage.getItem("user-phone"));
   return (
     <div>
       <div>
         <Outlet />
       </div>
-      <BottomNav />
+      {userPhone && <BottomNav />}
     </div>
   );
 };

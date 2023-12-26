@@ -106,9 +106,9 @@ const SignIn = () => {
   }
 
   return (
-    <div className="page signin-page">
+    <div className="signin-page">
       <header>
-        <h3>amChat</h3>
+        <h3>myambeats</h3>
       </header>
       {!toggleLogIn && (
         <div className="input-zone">

@@ -46,6 +46,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .profile-center > ul > li {
@@ -60,9 +62,14 @@
   align-items: center;
 }
 
-.log-out-btn{
+.profile-center > ul > li:nth-child(1) {
+  margin-top: 10px;
+}
+
+.log-out-btn {
   width: 20%;
-  background-color: whitesmoke;
+  background-color: transparent;
+  color: white;
 }
 
 .profile-bottom {
@@ -83,15 +90,21 @@
     background-color: blue;
     height: 94vh;
   }
+
+  .profile-top {
+    background-color: "";
+  }
   .profile-cont {
     flex: 0 0 100%;
     width: 100%;
   }
 
   .profile-center > ul > li {
-    height: 50px;
+    height: 60px;
+    width: 90%;
   }
-  .profile-bottom {
-    background-color: aliceblue;
+
+  .log-out-btn {
+    width: 40%;
   }
 }
