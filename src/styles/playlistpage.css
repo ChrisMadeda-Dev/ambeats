@@ -136,7 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(#353839,#1b1b1b);
+  background: linear-gradient(#353839, #1b1b1b);
 }
 
 .plr-top > h1 {
@@ -172,8 +172,21 @@
     margin: 0px;
   }
 
+  .plp-top {
+    background: linear-gradient(#353839, #1b1b1b);
+  }
+
+  .plp-top > h1 {
+    font-size: 30px;
+  }
+
+  .my-play-list {
+    gap: 8px;
+  }
+
   .my-pl-cont {
-    flex: 0 0 50px;
+    width: 90%;
+    flex: 0 0 80px;
   }
 
   .my-pl-cont > section:nth-child(1) {
@@ -194,7 +207,10 @@
     width: 100%;
     height: 94vh;
   }
+
   .plr-cont {
     width: 100%;
+    border: none;
+    border-right: none;
   }
 }

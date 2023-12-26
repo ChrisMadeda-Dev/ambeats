@@ -36,7 +36,7 @@
   margin-bottom: 100px;
 }
 
-.music-cont > section {
+.mc-play-icon {
   flex: 0 0 15%;
   height: 90%;
   background-color: "";
@@ -142,8 +142,13 @@
     flex: 0 0 70px;
     width: 98%;
   }
+
+  .mc-play-icon {
+    flex: 0 0 12%;
+  }
+
   .music-cont-det {
-    flex: 0 0 73%;
+    flex: 0 0 80%;
     height: 50px;
     background-color: "";
   }

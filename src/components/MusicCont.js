@@ -21,7 +21,7 @@ const MusicCont = ({ song, setSong, setToPl }) => {
 
   return (
     <div className="music-cont" onDoubleClick={(e) => setToPl(song)}>
-      <section onClick={(e) => setSong(song.src)}>
+      <section className="mc-play-icon" onClick={(e) => setSong(song.src)}>
         <BiPlayCircle style={{ fontSize: "20px" }} />
       </section>
       <div className="music-cont-det" onClick={(e) => setSong(song.src)}>
