@@ -23,10 +23,14 @@ const Profile = () => {
         <div className="profile-center">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link className="link-text" to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/playlist">My Playlist</Link>
+              <Link className="link-text" to="/playlist">
+                My Playlist
+              </Link>
             </li>
             <li>
               <button className="log-out-btn" onClick={logUserOut}>

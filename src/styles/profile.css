@@ -66,6 +66,12 @@
   margin-top: 10px;
 }
 
+.link-text{
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 15px;
+}
+
 .log-out-btn {
   width: 20%;
   background-color: transparent;
