@@ -20,6 +20,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  display: none;
 }
 
 .signin-page > header > h3 {
@@ -31,6 +32,7 @@
   width: 60%;
   height: 60vh;
   background-color: whitesmoke;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;

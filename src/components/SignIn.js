@@ -27,7 +27,9 @@ const SignIn = () => {
   const db = getFirestore(app);
 
   //adding user details to the database
-  function addUser() {
+  async function addUser() {
+    //Adds a passcode
+    const passcode = parseFloat(prompt("Enter Pass Code"));
     const phone3 = parseFloat(phone2) * 1099;
     const key = parseFloat(pin2) + 9901;
 
@@ -37,7 +39,8 @@ const SignIn = () => {
       pin &&
       pin === pin2 &&
       phone === phone2 &&
-      phone.length === 9
+      phone.length === 9 &&
+      passcode === 1111111111
     ) {
       const userDet = {
         name: name,
@@ -47,28 +50,36 @@ const SignIn = () => {
         createdAt: serverTimestamp(),
       };
 
-      localStorage.setItem("user-name", name);
-      localStorage.setItem("user-phone", phone3);
-
       //Add to firebase
       const docRef = doc(db, `users/${phone3}`);
 
-      setDoc(docRef, userDet);
-      setToggle(!toggle);
+      //Check is user exists
+      const userInfo = await getDoc(docRef);
 
-      alert("Thank you for joining amchat40");
-      alert("Go to chat page : CLick the button to get started");
+      if (!userInfo.exists()) {
+        //Execute if user does not exist
+        localStorage.setItem("user-name", name);
+        localStorage.setItem("user-phone", phone3);
 
-      //Take to home
-      window.location.href = "/";
+        setDoc(docRef, userDet);
+        setToggle(!toggle);
 
-      //navigate('/')
+        alert("Thank you for joining amchat40");
+        alert("Go to chat page : CLick the button to get started");
+
+        //Take to home
+        window.location.href = "/";
+      } else {
+        alert("User already exists");
+        localStorage.clear();
+      }
     } else {
+      passcode !== 1111111111 && alert("Wrong pass code");
       pin !== pin2 && alert("Confirm if Pin Matches");
       phone !== phone2 && alert("Confirm Phone Number Matches");
       phone.length !== 9 &&
         alert(
-          "Please check your phone number . (Format : 7********* , 9 digits) "
+          "Please check your phone number . (Format : 7********* , 9 digits,0 not included, start with 7....) "
         );
 
       if (pin === pin2 && phone === phone2 && phone.length === 9) {
@@ -78,27 +89,32 @@ const SignIn = () => {
   }
 
   async function logInUser() {
-    if (phone && pin && phone.length === 9) {
-      setPhone2(phone * 1099);
-      const userRef = doc(db, `users/${phone2}`);
+    const passcode = parseFloat(prompt("Enter Pass Code"));
 
-      await getDoc(userRef).then((snap) => {
-        if (snap.exists()) {
-          if (snap.data().pin === pin) {
-            localStorage.setItem("user-name", snap.data().name);
-            localStorage.setItem("user-phone", phone2);
+    if (phone && pin && phone.length === 9 && passcode === 1111111111) {
+      const phoneNum = phone * 1099;
+      const userRef = doc(db, `users/${phoneNum}`);
+      const userDoc = await getDoc(userRef);
 
-            alert("Welcome back, Great to have you again");
-            window.location.href = "/";
-            setToggle(!toggle);
-          } else {
-            alert("Please confirm your pin");
-          }
+      //Checks for userInfo in db
+      if (userDoc.exists()) {
+        if (userDoc.data().pin === pin) {
+          localStorage.setItem("user-name", userDoc.data().name);
+          localStorage.setItem("user-phone", phoneNum);
+
+          alert(
+            "Welcome back, Great to have you again. Have a blust. Remember to keep it gospel"
+          );
+          window.location.href = "/";
+          setToggle(!toggle);
         } else {
-          alert("Invalid Phone number");
+          alert("Please confirm your pin");
         }
-      });
+      } else {
+        alert("Phone number not found !!");
+      }
     } else {
+      passcode !== 1111111111 && alert("Wrong pass code");
       !phone && alert("Please add a phone number");
       !pin && alert("Please add pin");
       phone.length < 9 && alert("Invalid phone number");
