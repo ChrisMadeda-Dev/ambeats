@@ -60,13 +60,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: ease-in-out 0.5s;
+}
+
+.profile-center > ul > li:hover {
+  opacity: 0.7;
 }
 
 .profile-center > ul > li:nth-child(1) {
   margin-top: 10px;
 }
 
-.link-text{
+.link-text {
   text-decoration: none;
   color: whitesmoke;
   font-size: 15px;
