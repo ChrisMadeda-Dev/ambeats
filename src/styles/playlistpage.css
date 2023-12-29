@@ -81,6 +81,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  transition: ease-in-out 0.3s;
+}
+
+.my-pl-cont:hover {
+  opacity: 0.8;
 }
 
 .my-pl-cont > section:nth-child(1) {
@@ -204,7 +209,7 @@
     height: 94vh;
   }
 
-  .plr-top>h1{
+  .plr-top > h1 {
     font-size: 30px;
   }
   .plr-cont {

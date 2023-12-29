@@ -5,7 +5,7 @@ import song from "../audios/1.mp3";
 import { useEffect, useRef, useState } from "react";
 import app from "./Firebase";
 
-import {CgClose} from 'react-icons/cg'
+import { CgClose } from "react-icons/cg";
 
 import {
   getFirestore,
@@ -16,7 +16,6 @@ import {
   query,
   orderBy,
 } from "firebase/firestore";
-
 
 // Shows my avalable playlist
 const MyPlList = ({ song, tglMyPll }) => {
@@ -53,7 +52,9 @@ const MyPlList = ({ song, tglMyPll }) => {
   return (
     <div className="my-pl-list">
       <ul>
-        <span onClick={tglMyPll}><CgClose/></span>
+        <span onClick={tglMyPll}>
+          <CgClose />
+        </span>
         {playList.map((a) => (
           <li key={Math.random()} onClick={(e) => addPlId(a)}>
             {" "}
@@ -64,7 +65,6 @@ const MyPlList = ({ song, tglMyPll }) => {
     </div>
   );
 };
-
 
 // The Music Section
 const MusicSec = ({ musicID, playListId }) => {
@@ -137,7 +137,7 @@ const MusicSec = ({ musicID, playListId }) => {
 
   // gets songs from the datbase
   useEffect(() => {
-    const q=query(songsRef.current, orderBy('time','desc'))
+    const q = query(songsRef.current, orderBy("time", "desc"));
     function getSongs() {
       var array = [];
       getDocs(q).then((docs) => {
