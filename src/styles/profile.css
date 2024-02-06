@@ -79,10 +79,10 @@
 
 .log-out-btn {
   width: 30%;
-  height: 40%;
-  background-color: rgba(220, 20, 60, 0.366);
+  height: 100%;
+  background-color: transparent;
   border-radius: 20px;
-  color: white;
+  color: crimson;
 }
 
 .profile-bottom {
@@ -119,6 +119,7 @@
 
   .log-out-btn {
     width: 70%;
-    height: 50%;
+    height: 100%;
+    font-size: 14px;
   }
 }

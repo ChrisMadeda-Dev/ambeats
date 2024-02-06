@@ -38,9 +38,7 @@ const Profile = () => {
               </Link>
             </li>
             <li>
-              <button className="log-out-btn" onClick={logUserOut}>
-                Log Out
-              </button>
+              <button className="log-out-btn" onClick={logUserOut}> Log out </button>
             </li>
           </ul>
         </div>
