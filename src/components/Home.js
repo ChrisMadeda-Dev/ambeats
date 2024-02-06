@@ -14,7 +14,7 @@ import {
   BiSolidPlaylist,
 } from "react-icons/bi";
 import { MdFeaturedPlayList } from "react-icons/md";
-import {CgPlayList} from 'react-icons/cg'
+import { CgPlayList } from "react-icons/cg";
 import { useEffect, useState } from "react";
 
 import app from "./Firebase";
@@ -53,9 +53,12 @@ const HomeBarSec = () => {
 };
 
 const Home = () => {
+  //6-feb-2024 userDet not in use
   const [userDet, setUserDet] = useState({ name: "Name" });
   const userId = parseFloat(localStorage.getItem("user-phone"));
   const musicID = userId;
+
+  const userName = localStorage.getItem("user-name");
 
   useEffect(() => {
     function getUserDet() {
@@ -63,7 +66,11 @@ const Home = () => {
       const userDetRef = doc(db, `users/${userId}`);
 
       getDoc(userDetRef).then((snap) => {
-        setUserDet(snap.data());
+        //if user info is available in db
+        snap.data() !== undefined && setUserDet(snap.data());
+
+        //clear data in localstorage if info not available in db
+        snap.data() === undefined && localStorage.clear();
       });
     }
 
@@ -72,7 +79,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <ActionSec userDet={userDet} />
+      <ActionSec userDet={userDet} userName={userName} />
       <div className="home-center">
         <HomeHeader />
         <HomeBarSec />

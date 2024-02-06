@@ -78,8 +78,10 @@
 }
 
 .log-out-btn {
-  width: 20%;
-  background-color: transparent;
+  width: 30%;
+  height: 40%;
+  background-color: rgba(220, 20, 60, 0.366);
+  border-radius: 20px;
   color: white;
 }
 
@@ -116,6 +118,7 @@
   }
 
   .log-out-btn {
-    width: 40%;
+    width: 70%;
+    height: 50%;
   }
 }

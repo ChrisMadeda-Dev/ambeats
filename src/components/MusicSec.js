@@ -154,14 +154,16 @@ const MusicSec = ({ musicID, playListId }) => {
   return (
     <>
       <div className="music-sec">
-        {songs.map((song) => (
-          <MusicCont
-            key={Math.random()}
-            song={song}
-            setSong={setSong}
-            setToPl={setToPl}
-          />
-        ))}
+        {songs.length > 0 &&
+          songs.map((song) => (
+            <MusicCont
+              key={Math.random()}
+              song={song}
+              setSong={setSong}
+              setToPl={setToPl}
+            />
+          ))}
+        {songs.length === 0 && <small className="no-music-text"> Add your music</small>}
       </div>
       <MusicPlayer
         playingSong={playingSong.current}

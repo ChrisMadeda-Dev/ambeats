@@ -8,10 +8,15 @@ const Profile = () => {
   const musicId = (userId / 9901) * 1099;
 
   function logUserOut() {
-    console.log("looged out");
-    alert("You successfuly logged out");
-    localStorage.clear();
-    window.location.href = "/";
+    const a = prompt("Type yes to log Out");
+
+    if (a === "yes" || a === "Yes") {
+      localStorage.clear();
+      alert("You successfuly logged out");
+      window.location.href = "/";
+    } else {
+      alert("You not logged Out");
+    }
   }
 
   return (

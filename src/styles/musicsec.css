@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+.no-music-text {
+  color: gray;
+  font-size: 15px;
+}
+
 .music-cont {
   flex: 0 0 70px;
   width: 98%;

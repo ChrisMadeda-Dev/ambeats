@@ -6,7 +6,7 @@ import { CgPlayList } from "react-icons/cg";
 import { BsPerson } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const ActionSec = ({ userDet }) => {
+const ActionSec = ({ userDet, userName }) => {
   const [toggleUploadSec, setToggleUploadSec] = useState(false);
   const linkStyle = { color: "white", textDecoration: "none" };
 
@@ -19,7 +19,7 @@ const ActionSec = ({ userDet }) => {
       <div className="action-sec">
         <div className="act-det-sec">
           <section></section>
-          <span> Hi {userDet.name} </span>
+          <span> Hi {userName} </span>
         </div>
         <ul>
           <li>

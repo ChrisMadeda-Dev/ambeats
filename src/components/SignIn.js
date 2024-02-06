@@ -53,23 +53,25 @@ const SignIn = () => {
       //Add to firebase
       const docRef = doc(db, `users/${phone3}`);
 
-      //Check is user exists
+      //Check if user exists
       const userInfo = await getDoc(docRef);
 
       if (!userInfo.exists()) {
-        //Execute if user does not exist
-        localStorage.setItem("user-name", name);
-        localStorage.setItem("user-phone", phone3);
 
-        setDoc(docRef, userDet);
+        //Execute if user does not exist
+        await setDoc(docRef, userDet);
         setToggle(!toggle);
 
-        alert("Thank you for joining amchat40");
-        alert("Go to chat page : CLick the button to get started");
+        alert("Thank you for joining myammusic :)");
+
+        //set user info on the localstorage
+        localStorage.setItem("user-name", name);
+        localStorage.setItem("user-phone", phone3);
 
         //Take to home
         window.location.href = "/";
       } else {
+        //if user is available
         alert("User already exists");
         localStorage.clear();
       }
